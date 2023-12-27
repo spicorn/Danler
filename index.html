@@ -1,69 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <!-- adding a favicon -->
-    <link rel="icon" type="image/png" sizes="32x32"  border-radius="0.5em" href="/img/Logo.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      border-radius="0.5em"
+      href="/img/Logo.png"
+    />
     <title>Danler Tech</title>
-</head>
-<body>
-    <!--<header>
-        <nav>
-            <a href="">Home</a>
-            <a href="">About Us</a>
-            <a href="">Services</a>
-            <a href="">Contact</a>
-          </nav>
-    </header>-->
-
-      <!-- home section starts -->
-      <section class="hero" id="hero">
-        <div class="container">
-            <h1>Welcome to</h1>
-            <div class="loader">
-              <p class="text">
-                Danler<br>Tech
-              </p>
-            </div>
-           
-            <p>home of all designs.</p>
-        </div>
-      </section>
+  </head>
+  <body>
   
-      <!-- home section ends -->
-
-      <!-- about section starts -->
-      <section class="about" id="about">
-        <div class="about-text">
-          <h2>
-            About Us
-          </h2>
-          <div class="pra">
-             <p>
-              Danler Tech is a digital-first software solutions and digital marketing firm that integrates bespoke software solutions with aggressive marketing practices  to ensure business sucess.
-            </p>
-          </div>
-           
-          
+    <header class="top">
+      <div id="menu">
+        <div id="menu-bar" onclick="menuOnClick()">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
         </div>
-        <div class="main">
+        <nav class="nav" id="nav">
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#end">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="menu-bg" id="menu-bg"></div>
+    </header>
+
+
+    <!-- home section starts -->
+    <section id="hero">
+      <div class="hero-container">
+        <div class="split left">
+          <h1>We Design</h1>
+         
+        </div>
+        <div class="split right">
+          <h1>We Code</h1>
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+
+    
+    <!-- about section starts -->
+   <h2>.</h2>
+     
+    
+    <section class="about" id="about">
+    
+
+      <div class="left-side">
+        <div class="left-items">
+          <h2>About Us</h2>
+          <p>
+          Danler Tech is a digital-first software solutions and digital
+          marketing firm that integrates bespoke software solutions with
+          aggressive marketing practices to ensure business sucess.
+        </p>
+        </div>
+        <button class="arrow-btn">
+          <div class="line one">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        
+          </div>
+          <div class="line two">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        
+          </div>
+          <div class="line three">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        
+          </div>
+            <div class="line four">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        
+          </div>
+            
+            <div class="line five">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        
+          </div>
+            
+            <div class="line six">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        
+          </div>
+            
+            <div class="line seven">
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+            <div class="round"></div>
+        
+          </div>
+        </button>
+
+      </div>
+
+      <div class="right-side">
+        <div class="right-container">
           <div class="box">
             <div class="notification">
               <div class="notiglow"></div>
               <div class="notiborderglow"></div>
               <div class="notititle">Vision</div>
-              <div class="notibody">Get companies into sight to their customers on the internet</div>
+              <div class="notibody">
+                Get companies into sight to their customers on the internet
+              </div>
             </div>
           </div>
-  
+
           <div class="box">
             <div class="notification">
               <div class="notiglow"></div>
               <div class="notiborderglow"></div>
               <div class="notititle">Mission</div>
-              <div class="notibody">Create sightfull designs and connect people together</div>
+              <div class="notibody">
+                Create sightfull designs and connect people together
+              </div>
             </div>
           </div>
 
@@ -75,148 +158,170 @@
               <div class="notibody">Innovative, creative and networking</div>
             </div>
           </div>
-        </div>
-      </section>
-  
+        </div>      
+    </section>
+
     <!-- about section ends -->
 
     <!--Services-->
 
-    <section>
-       <div class="spinnerContainer">
-     
-      <div class="spin">
-        <p>Experts in:</p>
-        <div class="words">
-          <span class="word">Web Design</span>
-          <span class="word">Digital Marketing</span>
-          <span class="word">Advertising</span> 
-          <span class="word">Logo Design</span>
-          <span class="word">Media Marketing</span> 
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="card">
-        <i class="fa-solid fa-lightbulb fa-beat-fade" style="color: #ffd700;"></i>
-        <h5>Digital Marketing</h5>
-        <div class="pra">
-          <p>
-            In today's digital era, the significance of digital marketing for business growth cannot be overstated. With the advent of the internet and social media, establishing a robust online presence has become crucial for businesses to connect with their intended audience. 
-          </p>
-
+    <section id="services">
+      <div class="spinnerContainer">
+        <div class="spin">
+          <p>Experts in:</p>
+          <div class="words">
+            <span class="word">Web Design</span>
+            <span class="word">Digital Marketing</span>
+            <span class="word">Advertising</span>
+            <span class="word">Logo Design</span>
+            <span class="word">Media Marketing</span>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <i class="fa-solid fa-code fa-beat-fade" style="color: #ffd600;"></i>
-        <h5>Web Development</h5>
-        <div class="pra">
-          <p>
-            We offer a range of services related to websites, such as designing, developing, maintaining, and optimizing them. Whether you require a fresh website for your business or desire to enhance your current one, we have the expertise to assist you in reaching your objectives.
-          </p>
-
+      <main class="main flow">
+        <h1 class="main__heading">Services</h1>
+        <div class="main__cards cards">
+          <div class="cards__inner">
+            <div class="cards__card card">
+              <div class="icons">
+                  <i
+              class="fa-solid fa-lightbulb fa-beat-fade"
+              style="color: #ffd700"
+            ></i>
+              </div>
+            
+              <p class="card__price">Digital Marketing</p>
+              <p>
+                In today's digital era, the significance of digital marketing for
+                business growth cannot be overstated. With the advent of the
+                internet and social media, establishing a robust online presence
+                has become crucial for businesses to connect with their intended
+                audience.
+              </p>
+              <a href="#" class="card__cta cta">Marketing</a>
+            </div>
+  
+            <div class="cards__card card">
+              <div class="icons">
+                 <i class="fa-solid fa-code fa-beat-fade" style="color: #ffd600"></i>
+              </div>
+             
+              <p class="card__price">Web Development</p>
+              <p >
+                We offer a range of services related to websites, such as
+                designing, developing, maintaining, and optimizing them. Whether
+                you require a fresh website for your business or desire to enhance
+                your current one, we have the expertise to assist you in reaching
+                your objectives.
+              </p>
+              <a href="#" class="card__cta cta">Designing</a>
+            </div>
+  
+            <div class="cards__card card">
+              <div class="icons">
+                  <i
+              class="fa-solid fa-rectangle-ad fa-beat-fade"
+              style="color: #ffd600"
+            ></i>
+              </div>
+            
+              <p class="card__price">Business Advertising</p>
+              <p >
+                In today's digital era, the significance of digital marketing for
+                business growth cannot be overstated. With the advent of the
+                internet and social media, establishing a robust online presence
+                has become crucial for businesses to connect with their intended
+                audience.
+              </p>
+              <a href="#" class="card__cta cta">Advertising</a>
+            </div>
+          </div>
+  
+          <div class="overlay cards__inner"></div>
         </div>
-      </div>
+      </main>
 
-      <div class="card">
-        <i class="fa-solid fa-rectangle-ad fa-beat-fade" style="color: #ffd600;"></i>
-        <h5>
-          Business Advertising
-        </h5>
-        <div class="pra">
-          <p>
-            In today's digital era, the significance of digital marketing for business growth cannot be overstated. With the advent of the internet and social media, establishing a robust online presence has become crucial for businesses to connect with their intended audience.
-          </p>
-
-        </div>
-      </div>
-
-      <h5>
-        Get it done
-      </h5>
-      <div class="pic-card">
-        <div class="card-front">
-          <p class="title">We are </p>
-          <p class="subtitle">experienced</p>
-        </div>
-        <div class="card-back">
-          <p>Whether you’re a small business looking to establish your brand, or a large corporation in need of a design refresh, we are here to help. Let us bring your vision to life with our custom design solutions, consultancy services and digital marketing solutions</p>
-        </div>
-      </div>
-    </div>
     </section>
 
     <!--Services End-->
 
-    <!------import----
-<div class="contact-me" id="3">
-  <p>Let Us Get You To The Future.</p>
-      <p>
-          Our goal as the Futures is to offer broad capabilities, competitive prediction, exceptional quality and outstanding service to every customer.
-      </p>
-    
-       <form action="#3">
-          <input type="email" placeholder="Your E-mail Here" />
-          <button type="submit" submit="mailto:futures1234@gmail.com" onclick="subscribeUs()" id="subBtn" >Subscribe</button>
-          
-      </form> 
-</div>-->
+    <!------contact us------>
+    <div class="top-headings" id="end">
+      <h2>
+        Conctact us
+        <span
+          ><i
+            class="fa-solid fa-message fa-beat-fade"
+            style="color: goldenrod"
+          ></i
+        ></span>
+      </h2>
+    </div>
 
+    <div class="contact">
 
-
-    <!----footer section start---->
-    <footer id="end">
-      <div class="end" data-aos="zoom-in" data-aos-delay="150">
-        <h3>Con<span>tact</span></h3>
-
-        <div class="details" data-aos="fade-up" data-aos-delay="300">
-          <i class="fa-solid fa-mobile-screen-button fa-beat-fade" style="color: #2bff00;"></i>
-          <p>+263 777 058 996</p>
-
-          <i class="fa-regular fa-envelope fa-beat-fade" style="color: #2bff00;"></i>
-          <p>danlertech@gmail.com</p>
-          <br />
-
-        
-          <div class="btn-links">
-            <span>Social</span>
-            <a
-              class="social-link"
-              href="https://www.facebook.com/ngoni.mautsa.9"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a
-              class="social-link"
-              href="https://www.twitter.com/dancel_mautsa"
-            >
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a class="social-link" href="https://instagram.com/dancel_mautsa">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              class="social-link"
-              href="https://www.linkedin.com/in/dancel-mautsa-87246b217"
-            >
-              <i class="fab fa-linkedin-in"></i>
-            </a>
+      <div class="item-hints">
+        <div class="hint" data-position="4">
+          <span class="hint-radius"></span>
+          <span class="hint-dot">Tip</span>
+          <div class="hint-content do--split-children">
+            <p>Make use of this form to get in touch with us or visit our social media accounts below for quick response.</p>
           </div>
-
-          <p>©️ Danler Tech</p>
         </div>
       </div>
-    </footer>
-  
+      
 
-  <!----footer section end---->
+      <div class="form-container">
+        <form class="form">
+          <div class="form-group">
+            <label for="email">Company Email</label>
+            <input type="text" id="email" name="email" required="">
+          </div>
+            <div class="form-group">
+              <label for="textarea">How Can We Help You?
 
+              </label>
+              <textarea name="textarea" id="textarea" rows="10" cols="50" required="">       
+             </textarea>
+            </div>
+          <button class="form-submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="loader">
+      <p class="text">Danler<br />Tech</p>
+    </div>
 
-</body>
-<script
-      src="https://kit.fontawesome.com/c7b35f1878.js"
-      crossorigin="anonymous"
-    ></script>
+  </div>
+    </div>
+
+    
+
+  <!-- footer section starts  -->
+
+  <footer>
+    <p>Danler Tech</p>
+    <p>
+      For more information visit our social media accounts below for assistance.
+    </p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+    </div>
+    <p class="end">CopyRight By Danler Tech</p>
+    
+</footer>
+
+<!-- footer section ends  -->
+  </body>
+  <script src="../dancel-mautsa-main/js/menu.js"></script>
+  <script src="./script.js"></script>
+  <script src="../Glowy Cards Hover Effect/src/script.js"></script>
+  <script
+    src="https://kit.fontawesome.com/c7b35f1878.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
