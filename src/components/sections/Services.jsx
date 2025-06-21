@@ -118,9 +118,7 @@ const Services = () => {
             opacity: 0.90,
           }}
         >
-          {!isMobile() && (
-            <Spline scene="https://prod.spline.design/LEvjG3OETYd2GsRw/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-          )}
+          <Spline scene="https://prod.spline.design/LEvjG3OETYd2GsRw/scene.splinecode" style={{ width: '100%', height: '100%' }} />
         </div>
         <motion.div
           className="absolute top-20 left-20 w-28 h-28 border border-primary-300/20 rounded-full"
@@ -245,7 +243,7 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Comprehensive digital solutions tailored to your business needs
+            We offer comprehensive web development services to help your business thrive in the digital world.
           </p>
         </motion.div>
 

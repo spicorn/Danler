@@ -42,13 +42,11 @@ const projects = [
 ];
 
 const Portfolio = () => (
-  <section className="py-10 relative overflow-hidden">
+  <section id="projects" className="py-10 relative overflow-hidden">
     {/* Spline 3D Portfolio Background with Parallax and Glow */}
     <div className="absolute inset-0">
       <div className="absolute inset-0 z-0 transition-transform duration-300 pointer-events-none" style={{ filter: 'drop-shadow(0 0 60px #7f9cf5) blur(0.5px)', opacity: 0.90 }}>
-        {!isMobile() && (
-          <Spline scene="https://prod.spline.design/PBQQBw8bfXDhBo7w/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-        )}
+        <Spline scene="https://prod.spline.design/PBQQBw8bfXDhBo7w/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
     </div>
     {/* Gradient overlays */}

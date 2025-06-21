@@ -119,12 +119,10 @@ const Hero = () => {
           opacity: 0.92,
         }}
       >
-        {!isMobile() && (
-          <Spline
-            scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
-            style={{ width: '100%', height: '100%' }}
-          />
-        )}
+        <Spline
+          scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+        />
       </div>
 
       <div className="container relative z-10">
@@ -133,7 +131,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-400 dark:from-primary-400 dark:to-primary-200"
+            className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-200"
           >
             DanlerTech
           </motion.h1>
@@ -142,7 +140,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto"
           >
             Crafting exceptional digital experiences through innovative web solutions.
           </motion.p>
@@ -161,7 +159,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-400 hover:text-primary-400 transition-colors"
                 aria-label={link.label}
               >
                 <link.icon className="w-6 h-6" />
@@ -195,7 +193,7 @@ const Hero = () => {
         className="absolute left-8 top-1/2 transform -translate-y-1/2 hidden lg:block"
       >
         <motion.div
-          className="w-30 h-30 rounded-full from-primary-400/20 to-primary-600/20 dark:from-primary-500/20 dark:to-primary-700/20 flex items-center justify-center  backdrop-blur-sm"
+          className="w-30 h-30 rounded-full from-primary-500/20 to-primary-700/20 flex items-center justify-center backdrop-blur-sm"
           animate={{
             scale: [1, 1.05, 1],
             rotate: [0, -5, 5, 0],
@@ -249,7 +247,7 @@ const Hero = () => {
         className="absolute right-8 top-1/2 transform -translate-y-1/2 hidden lg:block"
       >
         <motion.div
-          className="w-30 h-30 rounded-full  from-primary-400/20 to-primary-600/20 dark:from-primary-500/20 dark:to-primary-700/20 flex items-center justify-center backdrop-blur-sm"
+          className="w-30 h-30 rounded-full from-primary-500/20 to-primary-700/20 flex items-center justify-center backdrop-blur-sm"
           animate={{
             scale: [1, 1.05, 1],
             rotate: [0, 5, -5, 0],
@@ -310,7 +308,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center"
         >
           <motion.div
             animate={{
@@ -321,7 +319,7 @@ const Hero = () => {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full mt-2"
+            className="w-1 h-2 bg-gray-600 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>

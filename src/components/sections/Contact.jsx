@@ -125,20 +125,14 @@ const Contact = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-            Get in Touch
+            Get In Touch
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Have a question or want to work together? Send me a message!
+            Ready to start your next project? Let's discuss how we can help bring your vision to life.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
@@ -279,10 +273,10 @@ const Contact = () => {
                 transition={{ delay: 0.7 }}
               >
                 <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
-                  Zimbabwe, Harare
+                  DanlerTech Headquarters
                 </p>
                 <p className="text-xs text-primary-600/70 dark:text-primary-400/70">
-                  Available for remote work worldwide
+                  Harare, Zimbabwe
                 </p>
               </motion.div>
             </motion.div>
@@ -316,10 +310,10 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 rounded-lg border ${
+                    className={`w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors ${
                       errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                     } bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-primary-500`}
-                    placeholder="Enter your name"
+                    placeholder="Your name"
                     required
                   />
                   <AnimatePresence>
@@ -350,10 +344,10 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2 rounded-lg border ${
+                    className={`w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors ${
                       errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                     } bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-primary-500`}
-                    placeholder="Enter your email"
+                    placeholder="your.email@example.com"
                     required
                   />
                   <AnimatePresence>
@@ -382,13 +376,13 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  rows="6"
+                  rows="5"
                   value={formData.message}
                   onChange={handleChange}
-                  className={`w-full px-4 py-2 rounded-lg border ${
+                  className={`w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors resize-none ${
                     errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                   } bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-primary-500`}
-                  placeholder="Enter your message"
+                  placeholder="Tell us about your project..."
                   required
                 />
                 <AnimatePresence>

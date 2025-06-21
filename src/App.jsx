@@ -57,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
       <Toaster position="top-center" />
       <CustomCursor />
       <BackToTop />
