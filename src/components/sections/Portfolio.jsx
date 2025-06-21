@@ -33,8 +33,8 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Minerak Marven Consultancy',
-    description: 'Comprehensive healthcare management system for hospitals with patient records, appointment scheduling, and billing.',
+    title: 'Mineral Marven Consultancy',
+    description: 'Mineral Maven Mining is a trusted mining consultancy that provides expert guidance and solutions to help mining companies optimize their operations, improve efficiency, and reduce costs.It also connects mining companies with investors and provides expert guidance to help them succeed.',
     image: mineral,
     liveUrl: 'https://spicorn.github.io/Marvern',
     featured: false,
