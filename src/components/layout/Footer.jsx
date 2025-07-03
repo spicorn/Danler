@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { FiPhone, FiMail } from 'react-icons/fi';
-import danler from '../../assets/images/Hero/danler.png';
+import danler from '/images/danler.png';
 
 
 const Footer = () => {

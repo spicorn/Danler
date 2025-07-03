@@ -1,9 +1,9 @@
 import Spline from '@splinetool/react-spline';
 import { FiArrowRight } from 'react-icons/fi';
-import afz from '../../assets/images/Projects/afz.png';
-import vakani from '../../assets/images/Projects/vakani.png';
-import tob from '../../assets/images/Projects/tob.png';
-import mineral from '../../assets/images/Projects/mineral.png';
+import afz from '/images/afz.png';
+import vakani from '/images/vakani.png';
+import tob from '/images/tob.png';
+import mineral from '/images/mineral.png';
 import { isMobile } from '../../utils/isMobile';
 
 const projects = [

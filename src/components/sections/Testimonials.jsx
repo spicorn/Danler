@@ -4,9 +4,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FiStar, FiMessageSquare } from 'react-icons/fi';
 import Spline from '@splinetool/react-spline';
-import avatar1 from '../../assets/images/Testimonials/avatar1.png';
-import avatar2 from '../../assets/images/Testimonials/avatar2.png';
-import avatar3 from '../../assets/images/Testimonials/avatar3.png';
+import avatar1 from '/images/avatar1.png';
+import avatar2 from '/images/avatar2.png';
+import avatar3 from '/images/avatar3.png';
 import { isMobile } from '../../utils/isMobile';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -136,7 +136,7 @@ const Testimonials = () => {
             opacity: 0.90,
           }}
         >
-          <Spline scene="https://prod.spline.design/PBQQBw8bfXDhBo7w/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+            <Spline scene="https://prod.spline.design/PBQQBw8bfXDhBo7w/scene.splinecode" style={{ width: '100%', height: '100%' }} />
         </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

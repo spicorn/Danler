@@ -118,7 +118,7 @@ const Services = () => {
             opacity: 0.90,
           }}
         >
-          <Spline scene="https://prod.spline.design/LEvjG3OETYd2GsRw/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+            <Spline scene="https://prod.spline.design/LEvjG3OETYd2GsRw/scene.splinecode" style={{ width: '100%', height: '100%' }} />
         </div>
         <motion.div
           className="absolute top-20 left-20 w-28 h-28 border border-primary-300/20 rounded-full"

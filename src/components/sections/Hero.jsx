@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa';
 import Spline from '@splinetool/react-spline';
-import danler from '../../assets/images/Hero/danler.png';
+import danler from '/images/danler.png';
 import { isMobile } from '../../utils/isMobile';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -119,10 +119,10 @@ const Hero = () => {
           opacity: 0.92,
         }}
       >
-        <Spline
-          scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
-          style={{ width: '100%', height: '100%' }}
-        />
+          <Spline
+            scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
+            style={{ width: '100%', height: '100%' }}
+          />
       </div>
 
       <div className="container relative z-10">
