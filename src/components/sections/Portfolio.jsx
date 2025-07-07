@@ -5,10 +5,19 @@ import vakani from '/images/vakani.png';
 import tob from '/images/tob.png';
 import mineral from '/images/mineral.png';
 import { isMobile } from '../../utils/isMobile';
+import instant from '/images/instant.png';
 
 const projects = [
   {
     id: 1,
+    title: 'Instant Homes',
+    description: "Instant Homes is Zimbabwe's leading provider of high-quality, customizable, and sustainable prefab homes. Our homes are adapted from Australian designs to suit Zimbabwean needs, ensuring comfort, efficiency, and affordability for all.",
+    image: instant,
+    liveUrl: 'https://spicorn.github.io/instanthomes',
+    featured: false,
+  },
+  {
+    id: 2,
     title: 'Associated Foods Zimbabwe',
     description: 'Associated Foods Zimbabwe is a leading food manufacturer and distributor of quality Spreads, Canned Products, Preserves and Snack Foods in Zimbabwe.',
     image: afz,
@@ -16,7 +25,7 @@ const projects = [
     
   },
   {
-    id: 2,
+    id: 3,
     title: 'Vakani Bricks',
     description: 'Vakani is a leading building materials company that provides high quality products and reliable services to customers and communities in and around Zimbabwe.',
     image: vakani,
@@ -24,7 +33,7 @@ const projects = [
     
   },
   {
-    id: 3,
+    id: 4,
     title: 'TOB Energy',
     description: 'TOB Energy (Private) Limited is a Zimbabwean indigenous trading firm. Its organizational roots stem from efficiently sourcing and producing services and products enabling us to deliver them to the customers at a fair cost timeously whilst upholding quality standards.',
     image: tob,
@@ -32,7 +41,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 4,
+    id: 5,
     title: 'Mineral Marven Consultancy',
     description: 'Mineral Maven Mining is a trusted mining consultancy that provides expert guidance and solutions to help mining companies optimize their operations, improve efficiency, and reduce costs.It also connects mining companies with investors and provides expert guidance to help them succeed.',
     image: mineral,
