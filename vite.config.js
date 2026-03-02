@@ -6,5 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()
   ],
-  base: 'https://www.danlertech.co.zw/',
+  base: '/Danler/',
 })

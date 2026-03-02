@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Highlighter } from "../layout/Highlighter";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -100,8 +99,6 @@ const Services = () => {
     >
       {/* Motion Graphics Background */}
       <div className="absolute inset-0">
-        {/*  */}
-
         {/* Floating particles */}
         {[...Array(8)].map((_, i) => (
           <motion.div
@@ -161,15 +158,15 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-            <Highlighter action="underline" color="#FF9800">
+           
               Our Services
-            </Highlighter>
+          
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             We offer comprehensive{" "}
-            <Highlighter action="highlight" color="#87CEFA">
-              <span className="text-black"> web development</span>
-            </Highlighter>{" "}
+           
+              web development
+         
             services to help your business thrive in the digital world.
           </p>
         </motion.div>

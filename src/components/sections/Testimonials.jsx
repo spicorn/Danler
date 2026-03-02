@@ -6,7 +6,6 @@ import { FiStar, FiMessageSquare } from "react-icons/fi";
 import avatar1 from "/images/avatar1.png";
 import avatar2 from "/images/avatar2.png";
 import avatar3 from "/images/avatar3.png";
-import { Highlighter } from "../layout/Highlighter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,17 +124,11 @@ const Testimonials = () => {
           className="text-center mb-8 sm:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-            <Highlighter action="underline" color="#FF9800">
-              What Our Clients Say
-            </Highlighter>
+            What Our Clients Say
           </h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
             Don't just take our word for it. Here's what our clients have to say
-            about working with{" "}
-            <Highlighter action="highlight" color="#87CEFA">
-              <span className="text-black"> Danler Tech</span>
-            </Highlighter>{" "}
-            .
+            about working with Danler Tech .
           </p>
         </motion.div>
 
