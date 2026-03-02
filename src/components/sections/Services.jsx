@@ -1,79 +1,75 @@
-import { useRef, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FiMonitor, FiTrendingUp, FiSearch, FiImage, FiCode } from 'react-icons/fi';
-import Spline from '@splinetool/react-spline';
-import { isMobile } from '../../utils/isMobile';
+import { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Highlighter } from "../layout/Highlighter";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  FiMonitor,
+  FiTrendingUp,
+  FiSearch,
+  FiImage,
+  FiCode,
+} from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
     icon: FiMonitor,
-    title: 'Website Design',
-    description: 'Beautiful, responsive websites that captivate your audience and drive conversions with modern design principles and user experience optimization.',
-    color: 'from-blue-500 to-blue-600',
+    title: "Website Design",
+    description:
+      "Beautiful, responsive websites that captivate your audience and drive conversions with modern design principles and user experience optimization.",
+    color: "from-blue-500 to-blue-600",
   },
   {
     icon: FiTrendingUp,
-    title: 'Digital Marketing',
-    description: 'Comprehensive digital marketing strategies including social media, email campaigns, and PPC advertising to grow your online presence and reach.',
-    color: 'from-purple-500 to-purple-600',
+    title: "Digital Marketing",
+    description:
+      "Comprehensive digital marketing strategies including social media, email campaigns, and PPC advertising to grow your online presence and reach.",
+    color: "from-purple-500 to-purple-600",
   },
   {
     icon: FiSearch,
-    title: 'SEO Optimization',
-    description: 'Search engine optimization services to improve your website\'s visibility, drive organic traffic, and achieve higher search engine rankings.',
-    color: 'from-green-500 to-green-600',
+    title: "SEO Optimization",
+    description:
+      "Search engine optimization services to improve your website's visibility, drive organic traffic, and achieve higher search engine rankings.",
+    color: "from-green-500 to-green-600",
   },
   {
     icon: FiImage,
-    title: 'Graphic Design & Branding',
-    description: 'Creative graphic design and branding solutions including logos, brand identity, marketing materials, and visual content that represents your business.',
-    color: 'from-red-500 to-red-600',
+    title: "Graphic Design & Branding",
+    description:
+      "Creative graphic design and branding solutions including logos, brand identity, marketing materials, and visual content that represents your business.",
+    color: "from-red-500 to-red-600",
   },
   {
     icon: FiCode,
-    title: 'WebApp Development',
-    description: 'Custom web applications and software solutions built with cutting-edge technologies to streamline your business processes and enhance productivity.',
-    color: 'from-yellow-500 to-yellow-600',
+    title: "WebApp Development",
+    description:
+      "Custom web applications and software solutions built with cutting-edge technologies to streamline your business processes and enhance productivity.",
+    color: "from-yellow-500 to-yellow-600",
   },
 ];
 
 const Services = () => {
   const sectionRef = useRef(null);
-  const splineParallaxRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Only keep the parallax effect for the background
       gsap.to(sectionRef.current, {
-        backgroundPosition: '50% 100%',
-        ease: 'none',
+        backgroundPosition: "50% 100%",
+        ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
+          start: "top bottom",
+          end: "bottom top",
           scrub: true,
         },
       });
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
-
-  // Parallax effect for Spline background
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-      if (splineParallaxRef.current) {
-        splineParallaxRef.current.style.transform = `translate(${x * 20}px, ${y * 15}px) scale(1.03)`;
-      }
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const cardVariants = {
@@ -84,14 +80,14 @@ const Services = () => {
       transition: {
         delay: i * 0.1,
         duration: 0.5,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     }),
     hover: {
       y: -10,
       transition: {
         duration: 0.3,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
@@ -101,85 +97,10 @@ const Services = () => {
       ref={sectionRef}
       id="services"
       className="py-10 relative overflow-hidden"
-      style={{
-        backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)',
-        backgroundSize: '100% 100%',
-      }}
     >
       {/* Motion Graphics Background */}
       <div className="absolute inset-0">
-        {/* Spline 3D Services Background with Parallax and Glow */}
-        <div
-          ref={splineParallaxRef}
-          className="absolute inset-0 z-0 transition-transform duration-300"
-          style={{
-            pointerEvents: 'none',
-            filter: 'drop-shadow(0 0 60px #7f9cf5) blur(0.5px)',
-            opacity: 0.90,
-          }}
-        >
-            <Spline scene="https://prod.spline.design/LEvjG3OETYd2GsRw/scene.splinecode" style={{ width: '100%', height: '100%' }} />
-        </div>
-        <motion.div
-          className="absolute top-20 left-20 w-28 h-28 border border-primary-300/20 rounded-full"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute top-40 right-32 w-20 h-20 border border-primary-400/20 rounded-lg"
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, -180, -360],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-32 left-1/4 w-16 h-16 border border-primary-500/20"
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, 90, 180, 270, 360],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-12 h-12 border border-primary-300/20 rounded-full"
-          animate={{
-            scale: [1, 1.4, 1],
-            rotate: [0, -90, -180, -270, -360],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-10 w-14 h-14 border border-primary-400/20"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
+        {/*  */}
 
         {/* Floating particles */}
         {[...Array(8)].map((_, i) => (
@@ -240,10 +161,16 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-            Our Services
+            <Highlighter action="underline" color="#FF9800">
+              Our Services
+            </Highlighter>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            We offer comprehensive web development services to help your business thrive in the digital world.
+            We offer comprehensive{" "}
+            <Highlighter action="highlight" color="#87CEFA">
+              <span className="text-black"> web development</span>
+            </Highlighter>{" "}
+            services to help your business thrive in the digital world.
           </p>
         </motion.div>
 
@@ -275,7 +202,7 @@ const Services = () => {
                       ease: "linear",
                     }}
                   />
-                  
+
                   {/* Floating dots */}
                   {[...Array(4)].map((_, i) => (
                     <motion.div
@@ -314,7 +241,9 @@ const Services = () => {
                 </div>
 
                 <div className="relative z-10">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300 relative`}>
+                  <div
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300 relative`}
+                  >
                     {/* Animated icon background */}
                     <motion.div
                       className="absolute inset-0 bg-white/20 rounded-2xl"
@@ -328,7 +257,7 @@ const Services = () => {
                         ease: "easeInOut",
                       }}
                     />
-                    <motion.div
+                    <div
                       animate={{
                         rotate: [0, 360],
                       }}
@@ -339,7 +268,7 @@ const Services = () => {
                       }}
                     >
                       <service.icon className="w-8 h-8 text-white relative z-10" />
-                    </motion.div>
+                    </div>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                     {service.title}
@@ -363,4 +292,4 @@ const Services = () => {
   );
 };
 
-export default Services; 
+export default Services;

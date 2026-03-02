@@ -1,18 +1,19 @@
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-import { toast } from 'react-hot-toast';
-import emailjs from '@emailjs/browser';
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+import { toast } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+import { Highlighter } from "../layout/Highlighter";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -24,12 +25,12 @@ const Contact = () => {
     const ctx = gsap.context(() => {
       // Only keep the parallax effect for the background
       gsap.to(sectionRef.current, {
-        backgroundPosition: '50% 100%',
-        ease: 'none',
+        backgroundPosition: "50% 100%",
+        ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
+          start: "top bottom",
+          end: "bottom top",
           scrub: true,
         },
       });
@@ -42,22 +43,22 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = "Email is invalid";
     }
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    if (!formData.message.trim()) newErrors.message = "Message is required";
     return newErrors;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
@@ -71,18 +72,18 @@ const Contact = () => {
     setIsSubmitting(true);
     try {
       await emailjs.sendForm(
-        'service_5n3mb9r',
-        'template_0b1ywzw',
+        "service_5n3mb9r",
+        "template_0b1ywzw",
         formRef.current,
-        'VKNQJGTDHHOJVx5iH'
+        "VKNQJGTDHHOJVx5iH",
       );
-      toast.success('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' });
-      
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+
       setErrors({});
     } catch (error) {
-      console.error('EmailJS error:', error);
-      toast.error('Failed to send message. Please try again.');
+      console.error("EmailJS error:", error);
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -91,21 +92,20 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: FiMail,
-      title: 'Email',
-      content: 'danlertechnologies@gmail.com',
-      link: 'mailto:danlertechnologies@gmail.com',
+      title: "Email",
+      content: "danlertechnologies@gmail.com",
+      link: "mailto:danlertechnologies@gmail.com",
     },
     {
       icon: FiPhone,
-      title: 'Phone',
-      content: '078 782 8366 / 077 703 3766',
-      link: 'tel:078 782 8366 / 077 703 3766',
+      title: "Phone",
+      content: "078 782 8366 / 077 703 3766",
+      link: "tel:078 782 8366 / 077 703 3766",
     },
     {
       icon: FiMapPin,
-      title: 'Location',
-      content: 'Zimbabwe, Harare',
-      
+      title: "Location",
+      content: "Zimbabwe, Harare",
     },
   ];
 
@@ -120,17 +120,26 @@ const Contact = () => {
       id="contact"
       className="py-10 bg-gray-50 dark:bg-gray-800 relative overflow-hidden"
       style={{
-        backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)',
-        backgroundSize: '100% 100%',
+        backgroundImage:
+          "radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)",
+        backgroundSize: "100% 100%",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-            Get In Touch
+            <Highlighter action="underline" color="#FF9800">
+              Get In Touch
+            </Highlighter>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Ready to start your next project? Let's discuss how we can help bring your vision to life.
+            <Highlighter action="highlight" color="#87CEFA">
+              <span className="text-black">
+                {" "}
+                Ready to start your next project?
+              </span>
+            </Highlighter>{" "}
+            Let's discuss how we can help bring your vision to life.
           </p>
         </div>
 
@@ -160,8 +169,12 @@ const Contact = () => {
                   <info.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white">{info.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{info.content}</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    {info.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {info.content}
+                  </p>
                 </div>
               </motion.a>
             ))}
@@ -175,54 +188,6 @@ const Contact = () => {
               className="mt-8 relative h-64 bg-gradient-to-br from-primary-100/50 to-primary-200/30 dark:from-primary-900/30 dark:to-primary-800/20 rounded-2xl overflow-hidden border border-primary-200 dark:border-primary-500/20"
             >
               {/* Animated geometric shapes */}
-              <motion.div
-                className="absolute top-4 left-4 w-16 h-16 border-2 border-primary-300/30 rounded-full"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-              <motion.div
-                className="absolute top-8 right-8 w-12 h-12 border-2 border-primary-400/30 rounded-lg"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  rotate: [0, -180, -360],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-              <motion.div
-                className="absolute bottom-8 left-1/3 w-10 h-10 border-2 border-primary-500/30"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  rotate: [0, 90, 180, 270, 360],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-              <motion.div
-                className="absolute bottom-4 right-4 w-8 h-8 border-2 border-primary-300/30 rounded-full"
-                animate={{
-                  scale: [1, 1.4, 1],
-                  rotate: [0, -90, -180, -270, -360],
-                }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
 
               {/* Floating particles */}
               {[...Array(6)].map((_, i) => (
@@ -255,12 +220,9 @@ const Contact = () => {
                 transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
               >
                 <div className="w-20 h-20 bg-primary-500/10 rounded-full flex items-center justify-center">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  >
+                  <div>
                     <FiMapPin className="w-10 h-10 text-primary-600 dark:text-primary-400" />
-                  </motion.div>
+                  </div>
                 </div>
               </motion.div>
 
@@ -273,7 +235,7 @@ const Contact = () => {
                 transition={{ delay: 0.7 }}
               >
                 <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
-                  DanlerTech Headquarters
+                  DanlerTech
                 </p>
                 <p className="text-xs text-primary-600/70 dark:text-primary-400/70">
                   Harare, Zimbabwe
@@ -301,7 +263,10 @@ const Contact = () => {
                   whileFocus="focus"
                   whileBlur="blur"
                 >
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -311,7 +276,9 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors ${
-                      errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                      errors.name
+                        ? "border-red-500"
+                        : "border-gray-300 dark:border-gray-600"
                     } bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-primary-500`}
                     placeholder="Your name"
                     required
@@ -335,7 +302,10 @@ const Contact = () => {
                   whileFocus="focus"
                   whileBlur="blur"
                 >
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -345,7 +315,9 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors ${
-                      errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                      errors.email
+                        ? "border-red-500"
+                        : "border-gray-300 dark:border-gray-600"
                     } bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-primary-500`}
                     placeholder="your.email@example.com"
                     required
@@ -370,7 +342,10 @@ const Contact = () => {
                 whileFocus="focus"
                 whileBlur="blur"
               >
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -380,7 +355,9 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 rounded-lg border focus:outline-none transition-colors resize-none ${
-                    errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                    errors.message
+                      ? "border-red-500"
+                      : "border-gray-300 dark:border-gray-600"
                   } bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-primary-500`}
                   placeholder="Tell us about your project..."
                   required
@@ -405,17 +382,23 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-3 px-6 rounded-lg bg-primary-500 text-white font-medium transition-colors ${
-                  isSubmitting ? 'opacity-75 cursor-not-allowed' : 'hover:bg-primary-600'
+                  isSubmitting
+                    ? "opacity-75 cursor-not-allowed"
+                    : "hover:bg-primary-600"
                 }`}
               >
                 {isSubmitting ? (
                   <motion.div
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                     className="w-6 h-6 border-2 border-white border-t-transparent rounded-full mx-auto"
                   />
                 ) : (
-                  'Send Message'
+                  "Send Message"
                 )}
               </motion.button>
             </motion.form>
@@ -426,4 +409,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

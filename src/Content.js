@@ -23,5 +23,21 @@ export const content = {
       icon: FiMail,
     },
   ],
-  
+
+  hero: {
+    firstName: "Danler",
+    LastName: "Tech",
+    btnText: "Welcome😊",
+
+    hero_content: [
+      {
+        count: "Danler",
+        text: "Custom & Creative digital solutions.",
+      },
+      {
+        count: "Tech",
+        text: "Projects designed by Danler",
+      },
+    ],
+  },
 };
