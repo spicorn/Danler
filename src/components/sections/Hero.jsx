@@ -186,7 +186,7 @@ const Hero = () => {
 
       <div className="flex w-full ">
         <div
-          className="flex w-full max-w-7xl flex-col items-center text-center z-20"
+          className="flex w-full max-w-7xl flex-col items-start text-left z-20 pl-10 md:pl-20"
           data-aos="fade-down"
         >
           <h1 className="text-white mb-4 text-xl sm:text-5xl lg:text-text-lg lg:leading-normal font-extrabold">
@@ -221,7 +221,7 @@ const Hero = () => {
                 <CanvasText
                   text={i === 0 ? "Danler" : "Tech"}
                   className="text-2xl font-bold md:text-4xl lg:text-6xl"
-                  backgroundClassName="bg-black dark:bg-neutral-700"
+                  backgroundClassName="bg-white-600 dark:bg-neutral-700"
                   colors={[
                     "var(--color-blue-500)",
                     "var(--color-sky-500)",
