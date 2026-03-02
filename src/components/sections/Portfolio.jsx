@@ -1,52 +1,75 @@
-import Spline from '@splinetool/react-spline';
-import { FiArrowRight } from 'react-icons/fi';
-import afz from '/images/afz.png';
-import vakani from '/images/vakani.png';
-import tob from '/images/tob.png';
-import mineral from '/images/mineral.png';
-import { isMobile } from '../../utils/isMobile';
-import instant from '/images/instant.png';
+import Spline from "@splinetool/react-spline";
+import { FiArrowRight } from "react-icons/fi";
+import afz from "/images/afz.png";
+import vakani from "/images/vakani.png";
+import tob from "/images/tob.png";
+import mineral from "/images/mineral.png";
+import { isMobile } from "../../utils/isMobile";
+import instant from "/images/instant.png";
+import firstmutual from "/images/firstmutual.png";
+import chema from "/images/Chema.png";
 
 const projects = [
   {
     id: 1,
-    title: 'Instant Homes',
-    description: "Instant Homes is Zimbabwe's leading provider of high-quality, customizable, and sustainable prefab homes. Our homes are adapted from Australian designs to suit Zimbabwean needs, ensuring comfort, efficiency, and affordability for all.",
-    image: instant,
-    liveUrl: 'https://spicorn.github.io/instanthomes',
+    title: "First Mutual Holdings Limited",
+    description:
+      "Designed and developed features for the First Mutual Muzukuru online platform, focusing on performance, usability and seamless user experience.",
+    image: firstmutual,
+    liveUrl: "https://first-mutual.muzukuru.com/",
     featured: false,
   },
   {
     id: 2,
-    title: 'Associated Foods Zimbabwe',
-    description: 'Associated Foods Zimbabwe is a leading food manufacturer and distributor of quality Spreads, Canned Products, Preserves and Snack Foods in Zimbabwe.',
-    image: afz,
-    liveUrl: 'https://spicorn.github.io/Associated-Foods-ZImbabwe',
-    
+    title: "Instant Homes",
+    description:
+      "Instant Homes is Zimbabwe's leading provider of high-quality, customizable, and sustainable prefab homes. Our homes are adapted from Australian designs to suit Zimbabwean needs, ensuring comfort, efficiency, and affordability for all.",
+    image: instant,
+    liveUrl: "https://spicorn.github.io/instanthomes",
+    featured: false,
   },
   {
     id: 3,
-    title: 'Vakani Bricks',
-    description: 'Vakani is a leading building materials company that provides high quality products and reliable services to customers and communities in and around Zimbabwe.',
-    image: vakani,
-    liveUrl: 'https://spicorn.github.io/Vakani',
-    
+    title: "Associated Foods Zimbabwe",
+    description:
+      "Associated Foods Zimbabwe is a leading food manufacturer and distributor of quality Spreads, Canned Products, Preserves and Snack Foods in Zimbabwe.",
+    image: afz,
+    liveUrl: "https://spicorn.github.io/Associated-Foods-ZImbabwe",
   },
   {
     id: 4,
-    title: 'TOB Energy',
-    description: 'TOB Energy (Private) Limited is a Zimbabwean indigenous trading firm. Its organizational roots stem from efficiently sourcing and producing services and products enabling us to deliver them to the customers at a fair cost timeously whilst upholding quality standards.',
-    image: tob,
-    liveUrl: 'https://spicorn.github.io/tobenergy',
-    featured: false,
+    title: "Vakani Bricks",
+    description:
+      "Vakani is a leading building materials company that provides high quality products and reliable services to customers and communities in and around Zimbabwe.",
+    image: vakani,
+    liveUrl: "https://spicorn.github.io/Vakani",
   },
   {
     id: 5,
-    title: 'Mineral Marven Consultancy',
-    description: 'Mineral Maven Mining is a trusted mining consultancy that provides expert guidance and solutions to help mining companies optimize their operations, improve efficiency, and reduce costs.It also connects mining companies with investors and provides expert guidance to help them succeed.',
-    image: mineral,
-    liveUrl: 'https://spicorn.github.io/Marvern',
+    title: "TOB Energy",
+    description:
+      "TOB Energy (Private) Limited is a Zimbabwean indigenous trading firm. Its organizational roots stem from efficiently sourcing and producing services and products enabling us to deliver them to the customers at a fair cost timeously whilst upholding quality standards.",
+    image: tob,
+    liveUrl: "https://spicorn.github.io/tobenergy",
     featured: false,
+  },
+  {
+    id: 6,
+    title: "Mineral Marven Consultancy",
+    description:
+      "Mineral Maven Mining is a trusted mining consultancy that provides expert guidance and solutions to help mining companies optimize their operations, improve efficiency, and reduce costs.It also connects mining companies with investors and provides expert guidance to help them succeed.",
+    image: mineral,
+    liveUrl: "https://spicorn.github.io/Marvern",
+    featured: false,
+  },
+  {
+    id: 7,
+    title: "Chema",
+    description:
+      "Chema is an online platform where users are able to donate or pay chema to the family of the deceased to show love to the family. It is owned by Muzukuru Funeral Streaming Company(Ongoing)",
+    image: chema,
+    liveUrl: "https://chema.muzukuru.com/",
+    featured: true,
   },
 ];
 
@@ -54,8 +77,17 @@ const Portfolio = () => (
   <section id="projects" className="py-10 relative overflow-hidden">
     {/* Spline 3D Portfolio Background with Parallax and Glow */}
     <div className="absolute inset-0">
-      <div className="absolute inset-0 z-0 transition-transform duration-300 pointer-events-none" style={{ filter: 'drop-shadow(0 0 60px #7f9cf5) blur(0.5px)', opacity: 0.90 }}>
-        <Spline scene="https://prod.spline.design/PBQQBw8bfXDhBo7w/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      <div
+        className="absolute inset-0 z-0 transition-transform duration-300 pointer-events-none"
+        style={{
+          filter: "drop-shadow(0 0 60px #7f9cf5) blur(0.5px)",
+          opacity: 0.9,
+        }}
+      >
+        <Spline
+          scene="https://prod.spline.design/PBQQBw8bfXDhBo7w/scene.splinecode"
+          style={{ width: "100%", height: "100%" }}
+        />
       </div>
     </div>
     {/* Gradient overlays */}
@@ -67,7 +99,8 @@ const Portfolio = () => (
           Our Portfolio
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Explore our latest projects and see how we transform ideas into exceptional digital experiences.
+          Explore our latest projects and see how we transform ideas into
+          exceptional digital experiences.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -78,7 +111,12 @@ const Portfolio = () => (
           >
             {/* Project Image */}
             <div className="relative h-48 overflow-hidden flex items-center justify-center bg-gray-100 dark:bg-gray-700">
-              <img src={project.image} alt={project.title} className="object-contain h-full w-full" loading="lazy" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="object-contain h-full w-full"
+                loading="lazy"
+              />
             </div>
             {/* Project Info */}
             <div className="p-6 flex flex-col items-center">
@@ -99,7 +137,9 @@ const Portfolio = () => (
                 <FiArrowRight className="ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
               {project.featured && (
-                <span className="ml-2 mt-2 px-2 py-1 bg-yellow-400 text-yellow-900 text-xs font-medium rounded-full">Featured</span>
+                <span className="ml-2 mt-2 px-2 py-1 bg-yellow-400 text-yellow-900 text-xs font-medium rounded-full">
+                  Featured
+                </span>
               )}
             </div>
           </div>
@@ -109,4 +149,4 @@ const Portfolio = () => (
   </section>
 );
 
-export default Portfolio; 
+export default Portfolio;

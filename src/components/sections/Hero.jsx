@@ -58,13 +58,13 @@ const Hero = () => {
   ];
 
   const images = [
-    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884p",
+    "https://ik.imagekit.io/qvdv4r3lk/tob.png?updatedAt=1771969651830p",
     "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
-    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/tob.png?updatedAt=1771969651830",
     "https://ik.imagekit.io/qvdv4r3lk/vakani.png?updatedAt=1715932037555",
     "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
     "https://ik.imagekit.io/qvdv4r3lk/Screenshot%202026-02-20%20103549.png?updatedAt=1771576794569",
-    "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
+    "https://ik.imagekit.io/qvdv4r3lk/tob.png?updatedAt=1771969651830",
     "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
     "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884",
     "https://ik.imagekit.io/qvdv4r3lk/home.png?updatedAt=1715932036803",
