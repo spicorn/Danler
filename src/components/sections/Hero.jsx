@@ -1,3 +1,4 @@
+"use client";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
@@ -186,7 +187,7 @@ const Hero = () => {
 
       <div className="flex w-full ">
         <div
-          className="flex w-full max-w-7xl flex-col items-start text-left z-20 pl-10 md:pl-20"
+          className="flex w-full max-w-7xl flex-col items-start text-left z-20 pl-30 md:pl-40"
           data-aos="fade-down"
         >
           <h1 className="text-white mb-4 text-xl sm:text-5xl lg:text-text-lg lg:leading-normal font-extrabold">

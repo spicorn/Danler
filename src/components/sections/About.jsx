@@ -3,8 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiUsers, FiAward, FiCode, FiCoffee } from "react-icons/fi";
-// import Spline from '@splinetool/react-spline';
-import { isMobile } from "../../utils/isMobile";
+import { Highlighter } from "../layout/Highlighter";
+// import { isMobile } from "../../utils/isMobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -132,13 +132,19 @@ const About = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">
-              About DanlerTech
+              <Highlighter action="underline" color="#FF9800">
+                About DanlerTech
+              </Highlighter>
             </h2>
+
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               We are a team of passionate developers and designers dedicated to
-              creating exceptional digital experiences. Our mission is to help
-              businesses thrive in the digital age through innovative solutions
-              and cutting-edge technology.
+              creating exceptional digital experiences.{" "}
+              <Highlighter action="highlight" color="#87CEFA">
+                <span className="text-black">Our mission is</span>
+              </Highlighter>{" "}
+              to help businesses thrive in the digital age through innovative
+              solutions and cutting-edge technology.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               With years of experience in web development, mobile apps, and

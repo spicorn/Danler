@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import { Highlighter } from "../layout/Highlighter";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -9,7 +10,6 @@ import {
   FiImage,
   FiCode,
 } from "react-icons/fi";
-import { isMobile } from "../../utils/isMobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +53,6 @@ const services = [
 
 const Services = () => {
   const sectionRef = useRef(null);
-  const splineParallaxRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -162,11 +161,16 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-            Our Services
+            <Highlighter action="underline" color="#FF9800">
+              Our Services
+            </Highlighter>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            We offer comprehensive web development services to help your
-            business thrive in the digital world.
+            We offer comprehensive{" "}
+            <Highlighter action="highlight" color="#87CEFA">
+              <span className="text-black"> web development</span>
+            </Highlighter>{" "}
+            services to help your business thrive in the digital world.
           </p>
         </motion.div>
 
