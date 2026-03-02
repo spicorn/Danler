@@ -7,7 +7,6 @@ import { isMobile } from "../../utils/isMobile";
 import instant from "/images/instant.png";
 import firstmutual from "/images/firstmutual.png";
 import chema from "/images/Chema.png";
-import { Highlighter } from "../layout/Highlighter";
 
 const projects = [
   {
@@ -81,20 +80,11 @@ const Portfolio = () => (
     <div className="container relative z-10">
       <div className="text-center mb-16">
         <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-          <Highlighter action="underline" color="#FF9800">
-            Selected Projects
-          </Highlighter>
+          Selected Projects
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Explore our selected{" "}
-          <Highlighter action="highlight" color="#87CEFA">
-            <span className="text-black"> projects</span>
-          </Highlighter>{" "}
-          and see how we transform ideas into exceptional{" "}
-          <Highlighter action="highlight" color="#87CEFA">
-            <span className="text-black"> digital experinces</span>
-          </Highlighter>{" "}
-          .
+          Explore our selected projects and see how we transform ideas into
+          exceptional digital experinces .
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
