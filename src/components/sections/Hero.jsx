@@ -1,16 +1,61 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
+import { AnimatedTooltip } from "../layout/Tooltip";
 import { ThreeDMarquee } from "../layout/Marquee";
 import { isMobile } from "../../utils/isMobile";
+import { content } from "../../Content";
+import { TypeAnimation } from "react-type-animation";
+import { CanvasText } from "../layout/CanvasText";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  const { hero } = content;
   const sectionRef = useRef(null);
-  const textRef = useRef(null);
+  // const textRef = useRef(null);
+  const people = [
+    {
+      id: 1,
+      name: "Dancel Mautsa",
+      designation: "Frontend Developer",
+      image: "https://ik.imagekit.io/qvdv4r3lk/me.png?updatedAt=1721930401325",
+    },
+    {
+      id: 2,
+      name: "Tinotenda Mautsa",
+      designation: "Software Engineer",
+      image: "https://ik.imagekit.io/qvdv4r3lk/tino.jpg",
+    },
+    {
+      id: 3,
+      name: "Butler Nyamunokora",
+      designation: "CEO",
+      image: "https://ik.imagekit.io/qvdv4r3lk/butler.jpg",
+    },
+    {
+      id: 4,
+      name: "Ngonidzashe Mautsa",
+      designation: "UX Designer",
+      image:
+        "https://ik.imagekit.io/qvdv4r3lk/danshe.png?updatedAt=1771403068943",
+    },
+    {
+      id: 5,
+      name: "Tyler Durden",
+      designation: "Soap Developer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    },
+    {
+      id: 6,
+      name: "Dora",
+      designation: "The Explorer",
+      image:
+        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    },
+  ];
 
   const images = [
     "https://ik.imagekit.io/qvdv4r3lk/firstmutual.png?updatedAt=1771244165884p",
@@ -38,248 +83,198 @@ const Hero = () => {
     "https://assets.aceternity.com/multi-step-loader.png",
   ];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Simplified animation that only plays once and ensures text stays visible
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          toggleActions: "play none none none", // Changed to prevent reverse
-          onEnter: () => {
-            // Ensure text is visible when entering
-            gsap.set(textRef.current.children, {
-              opacity: 1,
-              y: 0,
-              visibility: "visible",
-            });
-          },
-          onLeave: () => {
-            // Keep text visible when leaving
-            gsap.set(textRef.current.children, {
-              opacity: 1,
-              y: 0,
-              visibility: "visible",
-            });
-          },
-          onEnterBack: () => {
-            // Ensure text is visible when scrolling back up
-            gsap.set(textRef.current.children, {
-              opacity: 1,
-              y: 0,
-              visibility: "visible",
-            });
-          },
-          onLeaveBack: () => {
-            // Keep text visible when scrolling back up
-            gsap.set(textRef.current.children, {
-              opacity: 1,
-              y: 0,
-              visibility: "visible",
-            });
-          },
-        },
-      });
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     // Simplified animation that only plays once and ensures text stays visible
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start: "top top",
+  //         end: "bottom top",
+  //         toggleActions: "play none none none", // Changed to prevent reverse
+  //         onEnter: () => {
+  //           // Ensure text is visible when entering
+  //           gsap.set(textRef.current.children, {
+  //             opacity: 1,
+  //             y: 0,
+  //             visibility: "visible",
+  //           });
+  //         },
+  //         onLeave: () => {
+  //           // Keep text visible when leaving
+  //           gsap.set(textRef.current.children, {
+  //             opacity: 1,
+  //             y: 0,
+  //             visibility: "visible",
+  //           });
+  //         },
+  //         onEnterBack: () => {
+  //           // Ensure text is visible when scrolling back up
+  //           gsap.set(textRef.current.children, {
+  //             opacity: 1,
+  //             y: 0,
+  //             visibility: "visible",
+  //           });
+  //         },
+  //         onLeaveBack: () => {
+  //           // Keep text visible when scrolling back up
+  //           gsap.set(textRef.current.children, {
+  //             opacity: 1,
+  //             y: 0,
+  //             visibility: "visible",
+  //           });
+  //         },
+  //       },
+  //     });
 
-      // Initial animation - only plays once
-      tl.from(textRef.current.children, {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power4.out",
-      }).set(textRef.current.children, {
-        opacity: 1,
-        y: 0,
-        visibility: "visible",
-      });
+  //     // Initial animation - only plays once
+  //     tl.from(textRef.current.children, {
+  //       y: 100,
+  //       opacity: 0,
+  //       duration: 1,
+  //       stagger: 0.2,
+  //       ease: "power4.out",
+  //     }).set(textRef.current.children, {
+  //       opacity: 1,
+  //       y: 0,
+  //       visibility: "visible",
+  //     });
 
-      // Additional safety: ensure text is always visible
-      gsap.set(textRef.current.children, {
-        opacity: 1,
-        y: 0,
-        visibility: "visible",
-      });
-    }, sectionRef);
+  //     // Additional safety: ensure text is always visible
+  //     gsap.set(textRef.current.children, {
+  //       opacity: 1,
+  //       y: 0,
+  //       visibility: "visible",
+  //     });
+  //   }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  //   return () => ctx.revert();
+  // }, []);
 
-  const socialLinks = [
-    { icon: FaWhatsapp, url: "https://wa.me/+263787828366", label: "Whatsapp" },
-    {
-      icon: FaInstagram,
-      url: "https://www.instagram.com/danler_tech",
-      label: "Instagram",
-    },
-    {
-      icon: FaFacebook,
-      url: "https://www.facebook.com/danler_tech",
-      label: "Facebook",
-    },
-  ];
+  // const socialLinks = [
+  //   { icon: FaWhatsapp, url: "https://wa.me/+263787828366", label: "Whatsapp" },
+  //   {
+  //     icon: FaInstagram,
+  //     url: "https://www.instagram.com/danler_tech",
+  //     label: "Instagram",
+  //   },
+  //   {
+  //     icon: FaFacebook,
+  //     url: "https://www.facebook.com/danler_tech",
+  //     label: "Facebook",
+  //   },
+  // ];
 
   return (
-    // <section
-    //   ref={sectionRef}
-    //   id="home"
-    //   className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    // >
-    //   {/* Animated Background */}
-    //   {/* Spline 3D Hero Background Only */}
-
-    //   <div
-    //     className="absolute inset-0 z-0 transition-transform duration-300"
-    //     style={{
-    //       pointerEvents: "none",
-    //       filter: "drop-shadow(0 0 80px #7f9cf5) blur(0.5px)",
-    //       opacity: 0.92,
-    //     }}
-    //   >
-    //     <div className="hidden md:flex absolute flex-col items-center justify-center w-full gap-6">
-    //       <ThreeDMarquee images={images} />
-
-    //       {/* <p className="text-white text-center max-w-md px-4 md:mt-10 lg:mt-24 md:text-lg lg:text-xl">
-    //                   Crafting exceptional digital experiences through innovative web
-    //                   solutions.
-    //                 </p> */}
-    //     </div>
-    //     {/* <Spline
-    //       scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
-    //       style={{ width: "100%", height: "100%" }}
-    //     /> */}
-    //   </div>
-
-    //   <div className="container relative z-10">
-    //     <div ref={textRef} className="text-center space-y-8">
-    //       <motion.h1
-    //         initial={{ opacity: 0, y: 20 }}
-    //         animate={{ opacity: 1, y: 0 }}
-    //         transition={{ duration: 0.8, ease: "easeOut" }}
-    //         className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-200"
-    //       >
-    //         DanlerTech
-    //       </motion.h1>
-
-    //       <motion.p
-    //         initial={{ opacity: 0, y: 20 }}
-    //         animate={{ opacity: 1, y: 0 }}
-    //         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-    //         className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto"
-    //       >
-    //         Crafting exceptional digital experiences through innovative web
-    //         solutions.
-    //       </motion.p>
-
-    //       <motion.div
-    //         initial={{ opacity: 0, y: 20 }}
-    //         animate={{ opacity: 1, y: 0 }}
-    //         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-    //         className="flex justify-center space-x-6"
-    //       >
-    //         {socialLinks.map((link) => (
-    //           <motion.a
-    //             key={link.label}
-    //             href={link.url}
-    //             target="_blank"
-    //             rel="noopener noreferrer"
-    //             whileHover={{ scale: 1.1, y: -2 }}
-    //             whileTap={{ scale: 0.95 }}
-    //             className="text-gray-400 hover:text-primary-400 transition-colors"
-    //             aria-label={link.label}
-    //           >
-    //             <link.icon className="w-6 h-6" />
-    //           </motion.a>
-    //         ))}
-    //       </motion.div>
-
-    //       <motion.div
-    //         initial={{ opacity: 0, y: 20 }}
-    //         animate={{ opacity: 1, y: 0 }}
-    //         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-    //         className="pt-8"
-    //       >
-    //         <motion.a
-    //           href="#contact"
-    //           whileHover={{ scale: 1.05 }}
-    //           whileTap={{ scale: 0.95 }}
-    //           className="inline-block px-8 py-3 bg-primary-500 text-white rounded-full font-medium hover:bg-primary-600 transition-colors shadow-lg hover:shadow-xl"
-    //         >
-    //           Get Started
-    //         </motion.a>
-    //       </motion.div>
-    //     </div>
-    //   </div>
-
-    //   {/* Animated scroll indicator */}
-    //   <motion.div
-    //     initial={{ opacity: 0 }}
-    //     animate={{ opacity: 1 }}
-    //     transition={{ delay: 1, duration: 1 }}
-    //     className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-    //   >
-    //     <motion.div
-    //       animate={{
-    //         y: [0, 10, 0],
-    //       }}
-    //       transition={{
-    //         duration: 1.5,
-    //         repeat: Infinity,
-    //         ease: "easeInOut",
-    //       }}
-    //       className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center"
-    //     >
-    //       <motion.div
-    //         animate={{
-    //           y: [0, 12, 0],
-    //         }}
-    //         transition={{
-    //           duration: 1.5,
-    //           repeat: Infinity,
-    //           ease: "easeInOut",
-    //         }}
-    //         className="w-1 h-2 bg-gray-600 rounded-full mt-2"
-    //       />
-    //     </motion.div>
-    //   </motion.div>
-    // </section>
     <section
       ref={sectionRef}
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="flex w-full min-h-screen">
-        <div className=" mx-auto my-10 flex h-screen w-full max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl">
-          <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl">
-            This is your life and it&apos;s ending one{" "}
-            <span className="relative z-20 inline-block rounded-xl bg-blue-500/40 px-4 py-1 text-white underline decoration-sky-500 decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
-              moment
-            </span>{" "}
-            at a time.
-          </h2>
-          <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-base">
-            You are not your job, you&apos;re not how much money you have in the
-            bank. You are not the car you drive. You&apos;re not the contents of
-            your wallet.
-          </p>
-
-          <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4">
-            <button className="rounded-md bg-sky-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-sky-700 focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
-              Join the club
-            </button>
-            <button className="rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
-              Read more
-            </button>
-          </div>
-
-          {/* overlay */}
-          <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40" />
-          <ThreeDMarquee
-            className="pointer-events-none absolute inset-0 h-full w-full"
-            images={images}
-          />
+      <div
+        className="absolute inset-0 z-0 transition-transform duration-300"
+        style={{
+          pointerEvents: "none",
+          filter: "drop-shadow(0 0 80px #7f9cf5) blur(0.5px)",
+          opacity: 0.92,
+        }}
+      >
+        <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40">
+          <ThreeDMarquee images={images} />
         </div>
+      </div>
+
+      <div className="flex w-full ">
+        <div
+          className="flex w-full max-w-7xl flex-col items-center text-center z-20"
+          data-aos="fade-down"
+        >
+          <h1 className="text-white mb-4 text-xl sm:text-5xl lg:text-text-lg lg:leading-normal font-extrabold">
+            <TypeAnimation
+              sequence={[
+                "We Create",
+                1000,
+                "We Develop",
+                1000,
+                "We Design",
+                1000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h1>
+          <br />
+          <div className="flex justify-end">
+            <button className="btn">{hero.btnText}</button>
+          </div>
+          <div className="flex flex-col gap-10 mt-10">
+            {hero.hero_content.map((content, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className={`flex items-center w-80 gap-5
+                ${i === 1 && "flex-row-reverse text-right"}`}
+              >
+                <CanvasText
+                  text={i === 0 ? "Danler" : "Tech"}
+                  className="text-2xl font-bold md:text-4xl lg:text-6xl"
+                  backgroundClassName="bg-black dark:bg-neutral-700"
+                  colors={[
+                    "var(--color-blue-500)",
+                    "var(--color-sky-500)",
+                    "var(--color-violet-500)",
+                    "var(--color-teal-500)",
+                  ]}
+                  lineGap={6}
+                  animationDuration={10}
+                />
+
+                <p>{content.text}</p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-10 md:mt-20 lg:mt-28 flex justify-center  translate-x-80">
+            <AnimatedTooltip items={people} />
+          </div>
+        </div>
+        {/* <div className="mx-auto my-10 flex h-screen w-full max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl z-20">
+          <h1>hie</h1>
+        </div> */}
+        {/* Animated scroll indicator */}
+        //{" "}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.div
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center"
+          >
+            <motion.div
+              animate={{
+                y: [0, 12, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-1 h-2 bg-gray-600 rounded-full mt-2"
+            />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
