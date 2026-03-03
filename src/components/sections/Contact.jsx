@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { toast } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
+import Lottie from "lottie-react";
+import animationData from "../../assets/lottie/contact.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,20 +129,15 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
-          
-              Get In Touch
-        
+            Get In Touch
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            
-                Ready to start your next project?
-              
-            
-            Let's discuss how we can help bring your vision to life.
+            Ready to start your next project? Let's discuss how we can help
+            bring your vision to life.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -182,62 +179,13 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="mt-8 relative h-64 bg-gradient-to-br from-primary-100/50 to-primary-200/30 dark:from-primary-900/30 dark:to-primary-800/20 rounded-2xl overflow-hidden border border-primary-200 dark:border-primary-500/20"
+              className="mt-2"
             >
-              {/* Animated geometric shapes */}
-
-              {/* Floating particles */}
-              {[...Array(6)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-primary-400/40 rounded-full"
-                  style={{
-                    left: `${20 + i * 15}%`,
-                    top: `${30 + (i % 2) * 40}%`,
-                  }}
-                  animate={{
-                    y: [0, -20, 0],
-                    opacity: [0.4, 0.8, 0.4],
-                  }}
-                  transition={{
-                    duration: 3 + i * 0.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: i * 0.3,
-                  }}
-                />
-              ))}
-
-              {/* Central icon */}
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-              >
-                <div className="w-20 h-20 bg-primary-500/10 rounded-full flex items-center justify-center">
-                  <div>
-                    <FiMapPin className="w-10 h-10 text-primary-600 dark:text-primary-400" />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Location text */}
-              <motion.div
-                className="absolute bottom-4 left-4 right-4 text-center"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.7 }}
-              >
-                <p className="text-sm font-medium text-primary-700 dark:text-primary-300">
-                  DanlerTech
-                </p>
-                <p className="text-xs text-primary-600/70 dark:text-primary-400/70">
-                  Harare, Zimbabwe
-                </p>
-              </motion.div>
+              <Lottie
+                animationData={animationData}
+                data-aos="fade-right"
+                className="max-w-sm md:block hidden"
+              />
             </motion.div>
           </motion.div>
 
